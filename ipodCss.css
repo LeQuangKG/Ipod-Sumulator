@@ -1,0 +1,88 @@
+﻿@font-face { font-family: thoai; src: url('Font/TitlingGothicFBCond-Light.otf'); } 
+/* 
+ body   
+{
+    font-family:thoai;
+	padding:0;
+	margin:0;
+	width:1024px;
+	height:768px;
+	letter-spacing:1px;
+	-webkit-tap-highlight-color:rgba(0,0,0,0);
+}
+*/
+.Rotate
+{
+    -ms-transform:rotate(0deg); /* Firefox */
+    -moz-transform:rotate(0deg); /* Firefox */--
+    -webkit-transform:rotate(0deg); /* Safari and Chrome */
+    -o-transform:rotate(0deg); /* Safari and Chrome */
+    transform:rotate(0deg);
+}
+.RowSelected
+{    
+    /*background-image: url('../Image/bg-RowSelected.png');*/
+    #background-color: #a8a9ab;   
+	background-color: rgba(255,255,255,.3);
+	border-bottom:1px dashed #CCC;
+	
+}
+.Row{
+border-bottom:1px dashed #CCC;
+}
+.IconSelected
+{
+    float: left;
+    height: 20px;
+    width: 20px;
+    background-image: url('../Image/Untitled-1.png');
+    background-repeat: no-repeat;
+}
+
+
+.realipod{
+	left:0px;
+	top:0px;
+	width:1024px;
+	height:768px;
+	display:none;
+	z-index:11000;
+	position:absolute;
+}
+
+.ipod{
+	left:-40px;
+	top:80px;
+	width:1024px;
+	height:768px;
+	background:url(images/ip/0.png);
+	display: none;
+	position:absolute;
+	z-index:11000;
+}
+
+.ipodshow{
+	left:486px;
+	top:650px;
+	width:55px;
+	height:86px;
+	background:url(images/ip/ipod.png);
+	display: block;
+	position:absolute;
+	z-index:11000;
+	
+}
+
+.mask{
+	left:0px;
+	top:0px;
+	width:1024px;
+	height:768px;
+	z-index:0;
+	background:rgba(0,0,0,0.8);
+	display:none;
+	opacity: 1000;
+	-webkit-transition: opacity 1000ms;
+	position:absolute;
+	
+}

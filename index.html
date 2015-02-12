@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+        <link href="ipodCss.css" type='text/css' rel='stylesheet'/>
+		<script src = "Music.js" type="text/jscript"></script>
+        <script src = "limgloader.js" type="text/jscript"></script>
+        <script src = "Ipod.js" type="text/jscript"></script>
+		<script type="text/javascript">
+			// hide URL field on the iPhone/iPod touch
+			function hideUrlBar() {
+				
+				if (window.pageYOffset==0) {
+					window.scrollTo(0, 1);
+					// repeat every second for slow rendering pages
+					setTimeout(function() { hideUrlBar(); }, 3000);
+				}
+			}
+		</script>
+		<style type="text/css" title="Default">
+			body, div, h1, h2, h3, span, p {
+				font-family: Verdana,Arial,Helvetica,sans-serif;
+				color: #000000; 
+			}
+			body {
+				font-size: 10pt;
+				background : #ffffff;
+				background-image: url(images/FF.jpeg);
+				background-repeat: no-repeat;
+				-webkit-tap-highlight-color:rgba(0,0,0,0);
+				-webkit-user-select:none;
+			}
+			table,tr,td {
+				font-size: 10pt;
+				border-color : #777777;
+				background : #dddddd; 
+				color: #000000; 
+				border-style : solid;
+				border-width : 2px;
+				padding: 5px;
+				border-collapse:collapse;
+			}
+			h1 {
+				font-size: 18pt;
+			}
+			h2 {
+				font-size: 14pt;
+			}
+			.warning { 
+				font-weight: bold;
+			} 
+		</style>	
+	</head>
+	<body onorientationchange="hideUrlBar();">
+	<h1></h1>
+		<br>
+		<script type="text/javascript" src="pano2vr_player.js">
+		</script>
+		<div id="container" style="width:1024px;height:768px;position:absolute;top:0px;left:0px">
+		This content requires HTML5/CSS3, WebGL, or Adobe Flash Player Version 9 or higher.
+		</div>
+		<script type="text/javascript">
+	
+			// create the panorama player with the container
+			pano=new pano2vrPlayer("container");
+			pano.readConfigUrl("index.xml");
+			// hide the URL bar on the iPhone
+			hideUrlBar();
+			
+			var ipodshow;
+			var ipodimages;
+			var realipod;
+			window.onload = function(){
+				ipodshow = document.getElementById("ipodshow");
+				ipodimages = document.getElementById("ipod");
+				realipod = document.getElementById("realipod");
+				mask = document.getElementById("mask");
+				
+				var listimg = ['ip/0.png','ip/1.png','ip/2.png','ip/3.png','ip/4.png','ip/5.png','ip/6.png','ip/7.png','ip/8.png','ip/9.png','ip/10.png','ip/11.png','ip/12.png','ip/13.png','ip/14.png','ip/15.png','ip/16.png','ip/17.png','ip/18.png','ip/19.png','ip/20.png','ip/21.png','ip/22.png','ip/23.png','ip/24.png','ip/25.png','ip/26.png','ip/27.png','ip/28.png','ip/29.png','ip/30.png'];
+				var imgLoaders = new limgloader();
+				imgLoaders.loaded = initMain;
+				imgLoaders.loadImg(listimg);
+				
+				
+			}
+		</script>
+		<noscript>
+			<p><b>Please enable Javascript!</b></p>
+		</noscript>
+        
+       <!-- ipod added here-->
+       <div id="mask" class="mask"></div>
+       <div id="ipodshow" class="ipodshow"></div>
+       <div id="ipod" class="ipod"></div>
+       <div id="realipod" class="realipod"></div>
+	</body>
+</html>
